@@ -16,9 +16,9 @@ def step_i_search_for(context, text):
     search_field.submit()
 
 
-@then('I should see list of matching products in search results')
-def step_i_should_see_list(context):
+@then('I should see results {text} in search results')
+def step_i_should_see_results(context, text):
     products = context.driver.\
         find_elements_by_xpath("//h2[@class='product-name']/a")
     # check count of products shown in results
-    assert len(products) > 0
+    assert len(products) == int(text)
