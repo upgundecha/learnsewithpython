@@ -31,7 +31,7 @@ class HomePageTest(unittest.TestCase):
         shopping_cart_icon.click()
 
         shopping_cart_status = self.driver.\
-            find_element_by_css_selector("p.empty").texts
+            find_element_by_css_selector("p.empty").text
         self.assertEqual(shopping_cart_status,
                          "You have no items in your shopping cart.")
 
