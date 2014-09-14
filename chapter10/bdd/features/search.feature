@@ -12,4 +12,4 @@ Feature: I want to search for products
 
  Examples: By product name
    | term      | search_count |
-   | Sony Vio  | 0            |
+   | Sony Vio  | 1            |
