@@ -6,7 +6,7 @@ from selenium import webdriver
 class SearchProducts(unittest.TestCase):
 
     PLATFORM = 'windows'
-    BROWSER = 'phantomjs'
+    BROWSER = 'firefox'
     SAUCE_USERNAME = 'upgundecha'
     SUACE_KEY = 'c6e7132c-ae27-4217-b6fa-3cf7df0a7281'
 
@@ -39,7 +39,7 @@ class SearchProducts(unittest.TestCase):
             find_elements_by_xpath('//h2[@class=\'product-name\']/a')
 
         # check count of products shown in results
-        self.assertEqual(3, len(products))
+        self.assertEqual(len(products), 3)
 
     def tearDown(self):
         # close the browser window

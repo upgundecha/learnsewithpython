@@ -19,7 +19,7 @@ class SearchProducts(unittest.TestCase):
         self.driver.get('http://demo.magentocommerce.com/')
         self.driver.implicitly_wait(30)
 
-    def testSearchByCategory(self):
+    def test_search_by_category(self):
 
         # get the search textbox
         self.search_field = self.driver.find_element_by_name('q')
@@ -35,7 +35,7 @@ class SearchProducts(unittest.TestCase):
             find_elements_by_xpath('//h2[@class=\'product-name\']/a')
 
         # check count of products shown in results
-        self.assertEqual(3, len(products))
+        self.assertEqual(len(products), 3)
 
     def tearDown(self):
         # close the browser window

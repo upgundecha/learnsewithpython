@@ -1,33 +1,38 @@
 import unittest
-from selenium import webdriver
+from appium import webdriver
 
 
-class SearchProducts(unittest.TestCase):
+class SearchProductsOnAndroid(unittest.TestCase):
     def setUp(self):
-
         desired_caps = {}
-        desired_caps['platform'] = 'windows'
-        desired_caps['browserName'] = 'firefox'
+        # platform
+        desired_caps['device'] = 'Android'
+        # platform version
+        desired_caps['version'] = '4.3'
+        # mobile browser
+        desired_caps['app'] = 'Chrome'
 
+        # to connect to Appium server use RemoteWebDriver
+        # and pass desired capabilities
         self.driver = \
-            webdriver.Remote('http://192.168.1.102:4444/wd/hub', desired_caps)
-        self.driver.get('http://demo.magentocommerce.com/')
+            webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
+        self.driver.get("http://demo.magentocommerce.com/")
         self.driver.implicitly_wait(30)
 
     def test_search_by_category(self):
 
         # get the search textbox
-        self.search_field = self.driver.find_element_by_name('q')
+        self.search_field = self.driver.find_element_by_name("q")
         self.search_field.clear()
 
         # enter search keyword and submit
-        self.search_field.send_keys('phones')
+        self.search_field.send_keys("phones")
         self.search_field.submit()
 
         # get all the anchor elements which have product names displayed
         # currently on result page using find_elements_by_xpath method
         products = self.driver\
-            .find_elements_by_xpath('//h2[@class=\'product-name\']/a')
+            .find_elements_by_xpath("//ul[@class='c-list']/li")
 
         # check count of products shown in results
         self.assertEqual(len(products), 3)
