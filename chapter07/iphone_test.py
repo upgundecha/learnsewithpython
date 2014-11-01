@@ -19,8 +19,10 @@ class SearchProductsOnIPhone(unittest.TestCase):
         self.driver.get("http://demo.magentocommerce.com/")
         self.driver.implicitly_wait(30)
 
-    def testSearchByCategory(self):
+    def test_search_by_category(self):
 
+        # click on search icon
+        self.driver.find_element_by_xpath("//a[@href='#header-search']").click()
         # get the search textbox
         self.search_field = self.driver.find_element_by_name("q")
         self.search_field.clear()
@@ -32,10 +34,10 @@ class SearchProductsOnIPhone(unittest.TestCase):
         # get all the anchor elements which have product names displayed
         # currently on result page using find_elements_by_xpath method
         products = self.driver\
-            .find_elements_by_xpath("//ul[@class='c-list']/li")
+            .find_elements_by_xpath("//div[@class='category-products']/ul/li")
 
         # check count of products shown in results
-        self.assertEqual(len(products), 3)
+        self.assertEqual(len(products), 2)
 
     def tearDown(self):
         # close the browser window

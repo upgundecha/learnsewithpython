@@ -2,25 +2,26 @@ import unittest
 from appium import webdriver
 
 
-class SearchProductsOnAndroid(unittest.TestCase):
-    def setUp(self):
-        desired_caps = {}
-        # platform
-        desired_caps['device'] = 'Android'
-        # platform version
-        desired_caps['version'] = '4.3'
-        # mobile browser
-        desired_caps['app'] = 'Chrome'
+class SearchProductsOnIPhone(unittest.TestCase):
+    SAUCE_USERNAME = 'upgundecha'
+    SUACE_KEY = 'c6e7132c-ae27-4217-b6fa-3cf7df0a7281'
 
-        # to connect to Appium server use RemoteWebDriver
-        # and pass desired capabilities
+    def setUp(self):
+
+        desired_caps = {}
+        desired_caps['browserName'] = "Safari"
+        desired_caps['platformVersion'] = "7.1"
+        desired_caps['platformName'] = "iOS"
+        desired_caps['deviceName'] = "iPhone Simulator"
+
+        sauce_string = self.SAUCE_USERNAME + ':' + self.SUACE_KEY
+
         self.driver = \
-            webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
-        self.driver.get("http://demo.magentocommerce.com/")
+            webdriver.Remote('http://' + sauce_string + '@ondemand.saucelabs.com:80/wd/hub', desired_caps)
+        self.driver.get('http://demo.magentocommerce.com/')
         self.driver.implicitly_wait(30)
 
     def test_search_by_category(self):
-
         # click on search icon
         self.driver.find_element_by_xpath("//a[@href='#header-search']").click()
         # get the search textbox
