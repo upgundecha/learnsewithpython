@@ -21,6 +21,7 @@ class CompareProducts(unittest.TestCase):
         self.driver.\
             find_element_by_link_text("Add to Compare").click()
 
+
         # click on Remove this item link,
         # this will display an alert to the user
         self.driver.find_element_by_link_text("Clear All").click()

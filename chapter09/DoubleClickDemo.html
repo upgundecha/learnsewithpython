@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+  p { background:blue;
+        color:white;
+        height:100px;
+        width:150px;
+ }
+  p.dbl { background:yellow;color:black; }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <p id="message" align="justify">Click on me and my color will change</p>
+  
+  <div id="area" style="background:lightgray;width:150px">Div's Text</br><span style="color:red">Span's Text</span>
+  </div>
+  
+  <input type="hidden" name="date-submitted" value="2010-12-10">
+  
+<script>
+    var pdbl = $("p:first");
+    pdbl.dblclick(function () { 
+      pdbl.toggleClass('dbl'); 
+    });
+
+</script>
+
+</body>
+</html>
