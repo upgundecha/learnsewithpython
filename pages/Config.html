@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Build my Car - Configuration</title>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+	<!-- <script src="../../ui/jquery.ui.core.js"></script>
+	<script src="../../ui/jquery.ui.widget.js"></script>
+	<script src="../../ui/jquery.ui.tabs.js"></script>
+	<link rel="stylesheet" href="../demos.css"> -->
+	<script>
+	$(function() {
+		$( "#MyTab" ).tabs();
+	});
+	</script>
+</head>
+<body>
+
+<div class="demo">
+
+<div id="MyTab">
+	<ul>
+		<li><a href="#tabs-1">Configure</a></li>
+		<li><a href="#tabs-2">Your Details</a></li>
+		<li><a href="#tabs-3">Payment</a></li>
+	</ul>
+	<div id="tabs-1">
+		<h2>Configure Your Car</h2>
+		<p>Select Make:
+		<select name="make">
+		  <option value="bmw">BMW</option>
+		  <option value="mercedes">Mercedes</option>
+		  <option value="audi">Audi</option>
+		  <option value="honda">Honda</option>
+		</select>
+		<p>
+		<input type="radio" name="fuel_type" value="Petrol" /> Petrol &nbsp;
+		<input type="radio" name="fuel_type" value="Diesel" /> Diesel
+		</p>
+		<p>
+		Select Optional Features: </br>
+		<input type="checkbox" name="abs" value="ABS"/>ABS </br>
+		<input type="checkbox" name="airbags" value="Airbags"/>Air Bags </br>
+		<input type="checkbox" name="parksensor" value="ParkingSensor"/>Parking Sensor</br>
+		<input type="checkbox" name="ledheadlamp" value="LEDHeadLamp" disabled="true"/>LED Head Lamp</br>
+		</p>
+		<p>
+		Select Colors (You can select multiple Colors):</br>
+		<select name="color" size="6" multiple="multiple" style="width:100px">
+			<option value="bl">Black</option>
+			<option value="wt">White</option>
+			<option value="rd">Red</option>
+			<option value="br">Brown</option>
+			<option value="sl">Silver</option>
+		</select>
+		</br>
+		</br>
+		<input type="submit" value="Next" name="Conf_Next">
+		</p>
+		<button id="helpbutton" onClick='window.open("help.html","HelpWindow","width=500,height=500");'>Help</button>
+		<button id="chatbutton" onClick='window.open("OnlineChat.html","","width=500,height=500");'>Online Chat Support</button>
+		<button id="visitbutton" onClick='window.open("VisitUs.html","VisitUsWindow","width=500,height=500");'>Visit Us</button>
+	</div>
+	<div id="tabs-2">
+	</div>
+	<div id="tabs-3">
+	</div>
+</div>
+
+</div><!-- End demo -->
+
