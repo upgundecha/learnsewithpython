@@ -9,10 +9,11 @@ class DoubleClickTest (unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
+        self.driver.get(self.URL)
+        self.driver.maximize_window()
 
     def test_double_click(self):
         driver = self.driver
-        driver.get(self.URL)
         message = driver.find_element_by_id("message")
 
         # verify color is Blue

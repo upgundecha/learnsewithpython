@@ -1,11 +1,12 @@
 from selenium import webdriver
-import datetime,time,unittest
+import datetime, time, unittest
 from selenium.common.exceptions import NoSuchElementException
+
 
 class ScreenShotTest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
-        self.driver.get("http://localhost/magento/")
+        self.driver.get("http://demo.magentocommerce.com/")
 
     def test_screen_shot(self):
         driver = self.driver
@@ -13,7 +14,8 @@ class ScreenShotTest(unittest.TestCase):
             promo_banner_elem = driver.find_element_by_id("promo_banner")
             self.assertEqual(promo_banner_elem.text, "Promotions")
         except NoSuchElementException:
-            st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y%m%d_%H%M%S')
+            st = datetime.datetime\
+                .fromtimestamp(time.time()).strftime('%Y%m%d_%H%M%S')
             file_name = "main_page_missing_banner" + st + ".png"
             driver.save_screenshot(file_name)
             raise
@@ -22,4 +24,4 @@ class ScreenShotTest(unittest.TestCase):
         self.driver.close()
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)

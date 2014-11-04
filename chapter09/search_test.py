@@ -2,11 +2,12 @@ import unittest
 from selenium import webdriver
 from castro import Castro
 
+
 class SearchProductTest(unittest.TestCase):
     def setUp(self):
-        #Create an instance of Castro and provide name for the output file
+        # create an instance of Castro and provide name for the output file
         self.screenCapture = Castro(filename="testSearchByCategory.swf")
-        # Start the recording of movie
+        # start the recording of movie
         self.screenCapture.start()
 
         # create a new Firefox session
@@ -20,12 +21,12 @@ class SearchProductTest(unittest.TestCase):
     def test_search_by_category(self):
 
         # get the search textbox
-        self.search_field = self.driver.find_element_by_name("q")
-        self.search_field.clear()
+        search_field = self.driver.find_element_by_name("q")
+        search_field.clear()
 
         # enter search keyword and submit
-        self.search_field.send_keys("phones")
-        self.search_field.submit()
+        search_field.send_keys("phones")
+        search_field.submit()
 
         # get all the anchor elements which have product names displayed
         # currently on result page using find_elements_by_xpath method
@@ -42,4 +43,3 @@ class SearchProductTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
-
