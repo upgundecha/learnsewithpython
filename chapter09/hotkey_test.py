@@ -9,10 +9,10 @@ import unittest
 
 class HotkeyTest(unittest.TestCase):
 
-    URL = "https://rawgit.com/upgundecha/learnsewithpython/master/pages/test-static-05.html"
+    URL = "https://rawgit.com/jeresig/jquery.hotkeys/master/test-static-05.html"
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.get(self.URL)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
@@ -21,7 +21,7 @@ class HotkeyTest(unittest.TestCase):
         driver = self.driver
 
         shift_n_label = WebDriverWait(self.driver, 10).\
-            until(expected_conditions.visibility_of_element_located((By.ID, "_shift_n")))
+            until(expected_conditions.visibility_of_element_located((By.ID, "_Shift_n")))
 
         ActionChains(driver).\
             key_down(Keys.SHIFT).\

@@ -5,7 +5,7 @@ import unittest
 
 class DragAndDropTest (unittest.TestCase):
 
-    URL = "https://rawgit.com/upgundecha/learnsewithpython/master/pages/DragDropDemo.html"
+    URL = "http://jqueryui.com/resources/demos/droppable/default.html"
 
     def setUp(self)	:
         self.driver = webdriver.Firefox()

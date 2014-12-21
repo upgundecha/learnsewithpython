@@ -29,7 +29,7 @@ class ExecuteJavaScriptTest (unittest.TestCase):
         products = self.driver.find_elements_by_xpath("//h2[@class='product-name']/a")
 
         # check count of products shown in results
-        self.assertEqual(3, len(products))
+        self.assertEqual(2, len(products))
 
     def tearDown(self):
         # close the browser window

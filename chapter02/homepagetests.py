@@ -32,8 +32,8 @@ class HomePageTest(unittest.TestCase):
 
         shopping_cart_status = self.driver.\
             find_element_by_css_selector("p.empty").text
-        self.assertEqual(shopping_cart_status,
-                         "You have no items in your shopping cart.")
+        self.assertEqual("You have no items in your shopping cart.",
+                          shopping_cart_status)
 
         close_button = self.driver.\
             find_element_by_css_selector("div.minicart-wrapper a.close")
