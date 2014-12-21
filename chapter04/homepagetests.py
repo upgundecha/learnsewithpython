@@ -43,7 +43,7 @@ class HomePageTest(unittest.TestCase):
 
         # check Account and My Account link is
         # displayed/visible in the Home page footer
-        self.assertTrue(len(account_links), 2)
+        self.assertEqual(2, len(account_links))
 
     def test_count_of_promo_banners_images(self):
         # get promo banner list
