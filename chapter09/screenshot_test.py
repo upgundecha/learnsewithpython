@@ -12,7 +12,7 @@ class ScreenShotTest(unittest.TestCase):
         driver = self.driver
         try:
             promo_banner_elem = driver.find_element_by_id("promo_banner")
-            self.assertEqual(promo_banner_elem.text, "Promotions")
+            self.assertEqual("Promotions", promo_banner_elem.text)
         except NoSuchElementException:
             st = datetime.datetime\
                 .fromtimestamp(time.time()).strftime('%Y%m%d_%H%M%S')

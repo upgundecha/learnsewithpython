@@ -20,8 +20,8 @@ class CookiesTest(unittest.TestCase):
             Select(self.driver.find_element_by_id("select-language"))
 
         # check default selected option is English
-        self.assertEqual(select_language.first_selected_option.text,
-                         "ENGLISH")
+        self.assertEqual("ENGLISH", 
+                          select_language.first_selected_option.text)
         # store cookies should be none
         store_cookie = driver.get_cookie("store")
         self.assertEqual(None, store_cookie)

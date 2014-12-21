@@ -38,7 +38,7 @@ class SearchProductsOnIPhone(unittest.TestCase):
             .find_elements_by_xpath("//div[@class='category-products']/ul/li")
 
         # check count of products shown in results
-        self.assertEqual(len(products), 2)
+        self.assertEqual(2, len(products))
 
     def tearDown(self):
         # close the browser window

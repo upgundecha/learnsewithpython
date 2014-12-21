@@ -44,8 +44,8 @@ class RegisterNewUser(unittest.TestCase):
             find_element_by_xpath("//button[@title='Register']")
 
         # check maxlength of first name and last name textbox
-        self.assertEqual(first_name.get_attribute("maxlength"), "255")
-        self.assertEqual(last_name.get_attribute("maxlength"), "255")
+        self.assertEqual("255", first_name.get_attribute("maxlength"))
+        self.assertEqual("255", last_name.get_attribute("maxlength"))
 
         # check all fields are enabled
         self.assertTrue(first_name.is_enabled() and last_name.is_enabled() and

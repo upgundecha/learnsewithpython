@@ -35,7 +35,7 @@ class SearchProducts(unittest.TestCase):
             find_elements_by_xpath('//h2[@class=\'product-name\']/a')
 
         # check count of products shown in results
-        self.assertEqual(len(products), 3)
+        self.assertEqual(2, len(products))
 
     def tearDown(self):
         # close the browser window

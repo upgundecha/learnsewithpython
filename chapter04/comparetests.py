@@ -33,8 +33,8 @@ class CompareProducts(unittest.TestCase):
         alert_text = alert.text
 
         # check alert text
-        self.assertEqual(alert_text,
-                         "Are you sure you would like to remove all products from your comparison?")
+        self.assertEqual("Are you sure you would like to remove all products from your comparison?", 
+                          alert_text)
 
         # click on Ok button
         alert.accept()

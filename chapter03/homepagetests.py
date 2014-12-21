@@ -17,7 +17,7 @@ class HomePageTest(unittest.TestCase):
         search_field = self.driver.find_element_by_id("search")
 
         # check maxlength attribute is set to 128
-        self.assertEqual(search_field.get_attribute("maxlength"), "128")
+        self.assertEqual("128", search_field.get_attribute("maxlength"))
 
     def test_search_button_enabled(self):
         # get Search button
@@ -48,8 +48,8 @@ class HomePageTest(unittest.TestCase):
         # get images from the banner_list
         banners = banner_list.find_elements_by_tag_name("img")
 
-        # check there are 20 tags displayed on the page
-        self.assertEqual(len(banners), 3)
+        # check there are 3 banners displayed on the page
+        self.assertEqual(3, len(banners))
 
     def test_vip_promo(self):
         # get vip promo image
@@ -61,7 +61,7 @@ class HomePageTest(unittest.TestCase):
         # click on vip promo images to open the page
         vip_promo.click()
         # check page title
-        self.assertEqual(self.driver.title, "VIP")
+        self.assertEqual("VIP", self.driver.title)
 
     def test_shopping_cart_status(self):
         # check content of My Shopping Cart block on Home page
@@ -73,8 +73,8 @@ class HomePageTest(unittest.TestCase):
         # get the shopping cart status
         shopping_cart_status = self.driver.\
             find_element_by_css_selector("p.empty").text
-        self.assertEqual(shopping_cart_status,
-                         "You have no items in your shopping cart.")
+        self.assertEqual("You have no items in your shopping cart.", 
+                          shopping_cart_status)
         # close the shopping cart section
         close_button = self.driver.\
             find_element_by_css_selector("div.minicart-wrapper a.close")
