@@ -29,7 +29,7 @@ products = driver.find_elements_by_xpath("//h2[@class='product-name']/a")
 print "Found " + str(len(products)) + " products:"
 
 # iterate through each anchor element and
-# print the text i.e. name of the product
+# print the text that is name of the product
 for product in products:
     print product.text
 

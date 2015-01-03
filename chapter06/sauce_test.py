@@ -5,7 +5,7 @@ from selenium import webdriver
 
 class SearchProducts(unittest.TestCase):
 
-    PLATFORM = 'windows'
+    PLATFORM = 'WINDOWS'
     BROWSER = 'firefox'
     SAUCE_USERNAME = 'upgundecha'
     SUACE_KEY = 'c6e7132c-ae27-4217-b6fa-3cf7df0a7281'
@@ -22,6 +22,7 @@ class SearchProducts(unittest.TestCase):
             webdriver.Remote('http://' + sauce_string + '@ondemand.saucelabs.com:80/wd/hub', desired_caps)
         self.driver.get('http://demo.magentocommerce.com/')
         self.driver.implicitly_wait(30)
+		self.driver.maximize_window()
 
     def testSearchByCategory(self):
 

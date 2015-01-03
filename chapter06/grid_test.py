@@ -5,7 +5,7 @@ from selenium import webdriver
 
 class SearchProducts(unittest.TestCase):
 
-    PLATFORM = 'windows'
+    PLATFORM = 'WINDOWS	'
     BROWSER = 'firefox'
 
     def setUp(self):
@@ -18,6 +18,8 @@ class SearchProducts(unittest.TestCase):
             webdriver.Remote('http://192.168.1.104:4444/wd/hub', desired_caps)
         self.driver.get('http://demo.magentocommerce.com/')
         self.driver.implicitly_wait(30)
+		self.driver.maximize_window()
+		
 
     def test_search_by_category(self):
 

@@ -6,13 +6,14 @@ class SearchProducts(unittest.TestCase):
     def setUp(self):
 
         desired_caps = {}
-        desired_caps['platform'] = 'windows'
+        desired_caps['platform'] = 'WINDOWS	'
         desired_caps['browserName'] = 'firefox'
 
         self.driver = \
             webdriver.Remote('http://192.168.1.102:4444/wd/hub', desired_caps)
         self.driver.get('http://demo.magentocommerce.com/')
         self.driver.implicitly_wait(30)
+		self.driver.maximize_window()
 
     def test_search_by_category(self):
 

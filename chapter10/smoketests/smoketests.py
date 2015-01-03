@@ -1,10 +1,10 @@
 import unittest
 from xmlrunner import xmlrunner
-from searchtest import SearchProductTest
+from searchtests import SearchTests
 from homepagetests import HomePageTest
 
 # get all tests from SearchProductTest and HomePageTest class
-search_tests = unittest.TestLoader().loadTestsFromTestCase(SearchProductTest)
+search_tests = unittest.TestLoader().loadTestsFromTestCase(SearchTests)
 home_page_tests = unittest.TestLoader().loadTestsFromTestCase(HomePageTest)
 
 # create a test suite combining search_test and home_page_test

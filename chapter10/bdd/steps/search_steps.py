@@ -10,7 +10,6 @@ def step_i_am_on_home_page(context):
 def step_i_search_for(context, text):
     search_field = context.driver.find_element_by_name("q")
     search_field.clear()
-
     # enter search keyword and submit
     search_field.send_keys(text)
     search_field.submit()
@@ -21,4 +20,4 @@ def step_i_should_see_results(context, text):
     products = context.driver.\
         find_elements_by_xpath("//h2[@class='product-name']/a")
     # check count of products shown in results
-    assert len(products) == int(text)
+    assert len(products) >= int(text)

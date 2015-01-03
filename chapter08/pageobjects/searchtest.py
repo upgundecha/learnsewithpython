@@ -14,4 +14,4 @@ class SearchProductTest(BaseTestCase):
         self.assertEqual('IN STOCK', product.stock_status)
 
 if __name__ == '__main__':
-    unittest.main(verbosity=3)
+    unittest.main(verbosity=2)

@@ -15,7 +15,7 @@ class SearchDDT(unittest.TestCase):
         self.driver.get("http://demo.magentocommerce.com/")
 
     # specify test data using @data decorator
-    @data(("phones", 3), ("music", 5))
+    @data(("phones", 2), ("music", 5))
     @unpack
     def test_search(self, search_value, expected_count):
         # get the search textbox
