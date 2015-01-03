@@ -5,7 +5,7 @@ from searchtests import SearchTests
 from homepagetests import HomePageTest
 
 # get the directory path to output report file
-dir = os.getcwd()
+result_dir = os.getcwd()
 
 # get all tests from SearchProductTest and HomePageTest class
 search_tests = unittest.TestLoader().loadTestsFromTestCase(SearchTests)
@@ -15,7 +15,7 @@ home_page_tests = unittest.TestLoader().loadTestsFromTestCase(HomePageTest)
 smoke_tests = unittest.TestSuite([home_page_tests, search_tests])
 
 # open the report file
-outfile = open(dir + "\SmokeTestReport.html", "w")
+outfile = open(result_dir + "\SmokeTestReport.html", "w")
 
 # configure HTMLTestRunner options
 runner = HTMLTestRunner.HTMLTestRunner(stream=outfile,
