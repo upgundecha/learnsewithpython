@@ -2,7 +2,8 @@ import os
 from selenium import webdriver
 
 # get the path of chromedriver
-chrome_driver_path = os.getcwd + "\chromedriver.exe"
+dir = os.path.dirname(__file__)
+chrome_driver_path = dir + "\chromedriver.exe"
 #remove the .exe extension on linux or mac platform
 
 # create a new Chrome session
