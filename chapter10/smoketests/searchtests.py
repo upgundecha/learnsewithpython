@@ -10,15 +10,15 @@ class SearchTests(unittest.TestCase):
         self.driver.maximize_window()
 
         # navigate to the application home page
-        self.driver.get("http://demo.magentocommerce.com/")
+        self.driver.get('http://demo-store.seleniumacademy.com/')
 
     def test_search_by_category(self):
         # get the search textbox
-        self.search_field = self.driver.find_element_by_name("q")
+        self.search_field = self.driver.find_element_by_name('q')
         self.search_field.clear()
 
         # enter search keyword and submit
-        self.search_field.send_keys("phones")
+        self.search_field.send_keys('phones')
         self.search_field.submit()
 
         # get all the anchor elements which have product names displayed
@@ -29,11 +29,11 @@ class SearchTests(unittest.TestCase):
 
     def test_search_by_name(self):
         # get the search textbox
-        self.search_field = self.driver.find_element_by_name("q")
+        self.search_field = self.driver.find_element_by_name('q')
         self.search_field.clear()
 
         # enter search keyword and submit
-        self.search_field.send_keys("salt shaker")
+        self.search_field.send_keys('salt shaker')
         self.search_field.submit()
 
         # get all the anchor elements which have product names displayed

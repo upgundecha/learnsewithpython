@@ -20,9 +20,9 @@ class SearchProducts(unittest.TestCase):
 
         self.driver = \
             webdriver.Remote('http://' + sauce_string + '@ondemand.saucelabs.com:80/wd/hub', desired_caps)
-        self.driver.get('http://demo.magentocommerce.com/')
+        self.driver.get('http://demo-store.seleniumacademy.com/')
         self.driver.implicitly_wait(30)
-		self.driver.maximize_window()
+        self.driver.maximize_window()
 
     def testSearchByCategory(self):
 
@@ -36,11 +36,11 @@ class SearchProducts(unittest.TestCase):
 
         # get all the anchor elements which have product names displayed
         # currently on result page using find_elements_by_xpath method
-        products = self.driver.\
+        products = self.driver. \
             find_elements_by_xpath('//h2[@class=\'product-name\']/a')
 
         # check count of products shown in results
-        self.assertEqual(2, len(products))
+        self.assertEqual(3, len(products))
 
     def tearDown(self):
         # close the browser window

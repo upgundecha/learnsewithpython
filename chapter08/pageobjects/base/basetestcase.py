@@ -10,7 +10,7 @@ class BaseTestCase(unittest.TestCase):
         self.driver.maximize_window()
 
         # navigate to the application home page
-        self.driver.get('http://demo.magentocommerce.com/')
+        self.driver.get('http://demo-store.seleniumacademy.com/')
 
     def tearDown(self):
         # close the browser window

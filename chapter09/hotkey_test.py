@@ -9,7 +9,7 @@ import unittest
 
 class HotkeyTest(unittest.TestCase):
 
-    URL = "https://rawgit.com/jeresig/jquery.hotkeys/master/test-static-05.html"
+    URL = 'http://cookbook.seleniumacademy.com/test-static-05.html'
 
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -21,17 +21,17 @@ class HotkeyTest(unittest.TestCase):
         driver = self.driver
 
         shift_n_label = WebDriverWait(self.driver, 10).\
-            until(expected_conditions.visibility_of_element_located((By.ID, "_Shift_n")))
+            until(expected_conditions.visibility_of_element_located((By.ID, '_Shift_n')))
 
         ActionChains(driver).\
             key_down(Keys.SHIFT).\
             send_keys('n').\
             key_up(Keys.SHIFT).perform()
-        self.assertEqual("rgba(12, 162, 255, 1)",
-                         shift_n_label.value_of_css_property("background-color"))
+        self.assertEqual('rgba(12, 162, 255, 1)',
+                         shift_n_label.value_of_css_property('background-color'))
 
     def tearDown(self):
         self.driver.close()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main(verbosity=2)

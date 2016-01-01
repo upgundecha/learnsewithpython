@@ -7,7 +7,7 @@ Feature: I want to search for products
 
  Examples: By category
     | term    | search_count |
-    | Phones  | 2            |
+    | Phones  | 3            |
     | Bags	  | 7            |
 
  Examples: By product name

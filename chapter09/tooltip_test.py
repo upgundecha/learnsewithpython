@@ -16,20 +16,20 @@ class ToolTipTest (unittest.TestCase):
     def test_tool_tip(self):
         driver = self.driver
 
-        frame_elm = driver.find_element_by_class_name("demo-frame")
+        frame_elm = driver.find_element_by_class_name('demo-frame')
         driver.switch_to.frame(frame_elm)
 
-        age_field = driver.find_element_by_id("age")
+        age_field = driver.find_element_by_id('age')
         ActionChains(self.driver).move_to_element(age_field).perform()
 
         tool_tip_elm = WebDriverWait(self.driver, 10)\
-            .until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, "ui-tooltip-content")))
+            .until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, 'ui-tooltip-content')))
 
         # verify tooltip message
-        self.assertEqual("We ask for your age only for statistical purposes.", tool_tip_elm.text)
+        self.assertEqual('We ask for your age only for statistical purposes.', tool_tip_elm.text)
 
     def tearDown(self):
         self.driver.close()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main(verbosity=2)

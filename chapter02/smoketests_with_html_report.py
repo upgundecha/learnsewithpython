@@ -15,7 +15,7 @@ home_page_tests = unittest.TestLoader().loadTestsFromTestCase(HomePageTest)
 smoke_tests = unittest.TestSuite([home_page_tests, search_tests])
 
 # open the report file
-outfile = open(result_dir + "\SmokeTestReport.html", "w")
+outfile = open(result_dir + '\SmokeTestReport.html', 'w')
 
 # configure HTMLTestRunner options
 runner = HTMLTestRunner.HTMLTestRunner(stream=outfile,

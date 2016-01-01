@@ -4,7 +4,7 @@ import unittest
 
 class PopupWindowTest(unittest.TestCase):
 
-    URL = "https://rawgit.com/upgundecha/learnsewithpython/master/pages/Config.html"
+    URL = 'http://cookbook.seleniumacademy.com/Config.html'
 
     def setUp(self)	:
         self.driver = webdriver.Firefox()
@@ -18,14 +18,14 @@ class PopupWindowTest(unittest.TestCase):
         parent_window_id = driver.current_window_handle
 
         # clicking Help Button will open Help Page in a new Popup Browser Window
-        help_button = driver.find_element_by_id("helpbutton")
+        help_button = driver.find_element_by_id('helpbutton')
         help_button.click()
-        driver.switch_to.window("HelpWindow")
+        driver.switch_to.window('HelpWindow')
         driver.close()
         driver.switch_to.window(parent_window_id)
 
     def tearDown(self):
         self.driver.close()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main(verbosity=2)

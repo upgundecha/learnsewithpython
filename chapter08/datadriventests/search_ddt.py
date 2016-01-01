@@ -12,14 +12,14 @@ class SearchDDT(unittest.TestCase):
         self.driver.maximize_window()
 
         # navigate to the application home page
-        self.driver.get("http://demo.magentocommerce.com/")
+        self.driver.get('http://demo-store.seleniumacademy.com/')
 
     # specify test data using @data decorator
-    @data(("phones", 2), ("music", 5))
+    @data(('phones', 3), ('music', 5))
     @unpack
     def test_search(self, search_value, expected_count):
         # get the search textbox
-        self.search_field = self.driver.find_element_by_name("q")
+        self.search_field = self.driver.find_element_by_name('q')
         self.search_field.clear()
 
         # enter search keyword and submit.

@@ -25,14 +25,14 @@ class SearchExcelDDT(unittest.TestCase):
         self.driver.maximize_window()
 
         # navigate to the application home page
-        self.driver.get("http://demo.magentocommerce.com/")
+        self.driver.get('http://demo-store.seleniumacademy.com/')
 
     # get the data from specified Excel spreadsheet
     # by calling the get_data function
-    @data(*get_data("TestData.xlsx"))
+    @data(*get_data('TestData.xlsx'))
     @unpack
     def test_search(self, search_value, expected_count):
-            self.search_field = self.driver.find_element_by_name("q")
+            self.search_field = self.driver.find_element_by_name('q')
             self.search_field.clear()
 
             # enter search keyword and submit.
@@ -47,8 +47,8 @@ class SearchExcelDDT(unittest.TestCase):
                 # check count of products shown in results
                 self.assertEqual(expected_count, len(products))
             else:
-                msg = self.driver.find_element_by_class_name("note-msg")
-                self.assertEqual("Your search returns no results.", msg.text)
+                msg = self.driver.find_element_by_class_name('note-msg')
+                self.assertEqual('Your search returns no results.', msg.text)
 
     def tearDown(self):
         # close the browser window

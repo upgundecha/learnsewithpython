@@ -3,12 +3,12 @@ from behave import *
 
 @given('I am on home page')
 def step_i_am_on_home_page(context):
-    context.driver.get("http://demo.magentocommerce.com/")
+    context.driver.get('http://demo-store.seleniumacademy.com/')
 
 
 @when('I search for {text}')
 def step_i_search_for(context, text):
-    search_field = context.driver.find_element_by_name("q")
+    search_field = context.driver.find_element_by_name('q')
     search_field.clear()
     # enter search keyword and submit
     search_field.send_keys(text)

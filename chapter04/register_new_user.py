@@ -10,18 +10,18 @@ class RegisterNewUser(unittest.TestCase):
         self.driver.maximize_window()
 
         # navigate to the application home page
-        self.driver.get("http://demo.magentocommerce.com/")
+        self.driver.get('http://demo-store.seleniumacademy.com/')
 
     def test_register_new_user(self):
         driver = self.driver
 
         # click on Log In link to open Login page
-        driver.find_element_by_link_text("ACCOUNT").click()
-        driver.find_element_by_link_text("My Account").click()
+        driver.find_element_by_link_text('ACCOUNT').click()
+        driver.find_element_by_link_text('My Account').click()
 
         # get the Create Account button
         create_account_button = \
-            driver.find_element_by_link_text("CREATE AN ACCOUNT")
+            driver.find_element_by_link_text('CREATE AN ACCOUNT')
 
         # check Create Account button is displayed and enabled
         self.assertTrue(create_account_button.is_displayed() and
@@ -31,21 +31,21 @@ class RegisterNewUser(unittest.TestCase):
         create_account_button.click()
 
         # check title
-        self.assertEquals("Create New Customer Account", driver.title)
+        self.assertEquals('Create New Customer Account', driver.title)
 
         # get all the fields from Create an Account form
-        first_name = driver.find_element_by_id("firstname")
-        last_name = driver.find_element_by_id("lastname")
-        email_address = driver.find_element_by_id("email_address")
-        password = driver.find_element_by_id("password")
-        confirm_password = driver.find_element_by_id("confirmation")
-        news_letter_subscription = driver.find_element_by_id("is_subscribed")
+        first_name = driver.find_element_by_id('firstname')
+        last_name = driver.find_element_by_id('lastname')
+        email_address = driver.find_element_by_id('email_address')
+        password = driver.find_element_by_id('password')
+        confirm_password = driver.find_element_by_id('confirmation')
+        news_letter_subscription = driver.find_element_by_id('is_subscribed')
         submit_button = driver.\
             find_element_by_xpath("//button[@title='Register']")
 
         # check maxlength of first name and last name textbox
-        self.assertEqual("255", first_name.get_attribute("maxlength"))
-        self.assertEqual("255", last_name.get_attribute("maxlength"))
+        self.assertEqual('255', first_name.get_attribute('maxlength'))
+        self.assertEqual('255', last_name.get_attribute('maxlength'))
 
         # check all fields are enabled
         self.assertTrue(first_name.is_enabled() and last_name.is_enabled() and
@@ -57,27 +57,27 @@ class RegisterNewUser(unittest.TestCase):
         # check Sign Up for Newsletter is unchecked
         self.assertFalse(news_letter_subscription.is_selected())
 
-        user_name = "user_" + strftime("%Y%m%d%H%M%S", gmtime())
+        user_name = 'user_' + strftime('%Y%m%d%H%M%S', gmtime())
 
         # fill out all the fields
-        first_name.send_keys("Test")
+        first_name.send_keys('Test')
         last_name.send_keys(user_name)
         news_letter_subscription.click()
-        email_address.send_keys(user_name + "@example.com")
-        password.send_keys("tester")
-        confirm_password.send_keys("tester")
+        email_address.send_keys(user_name + '@example.com')
+        password.send_keys('tester')
+        confirm_password.send_keys('tester')
 
         # click Submit button to submit the form
         submit_button.click()
 
         # check new user is registered
-        self.assertEqual("Hello, Test " + user_name + "!",
-                         driver.find_element_by_css_selector("p.hello > strong").text)
-        driver.find_element_by_link_text("ACCOUNT").click()
-        self.assertTrue(driver.find_element_by_link_text("Log Out").is_displayed())
+        self.assertEqual('Hello, Test ' + user_name + '!',
+                         driver.find_element_by_css_selector('p.hello > strong').text)
+        driver.find_element_by_link_text('ACCOUNT').click()
+        self.assertTrue(driver.find_element_by_link_text('Log Out').is_displayed())
 
     def tearDown(self):
         self.driver.quit()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main(verbosity=2)
